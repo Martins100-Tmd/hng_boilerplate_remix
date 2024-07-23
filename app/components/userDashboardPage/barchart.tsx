@@ -1,7 +1,6 @@
 "use client";
 
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
-
 import {
     ChartConfig,
     ChartContainer,
@@ -44,7 +43,6 @@ export default function BarComponent() {
             <BarChart
                 accessibilityLayer
                 data={chartData}
-            // className="pb-16"
             >
                 <CartesianGrid vertical={false} />
                 <XAxis

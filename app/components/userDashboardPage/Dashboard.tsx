@@ -7,6 +7,7 @@ import subscript from "/images/subscript.png";
 import "../../styles/new.css";
 
 import BarComponent from "./barchart";
+import { Calendar, CalendarDays, DollarSign, Users, CreditCard, TrendingUp } from 'lucide-react';
 
 const fakeData2 = [
     {
@@ -52,25 +53,25 @@ const fakeData1 = [
         name: "Total Revenue",
         amount: "$45,000.00",
         remark: "+20% from last month",
-        icon: revenue,
+        icon: <DollarSign />,
     },
     {
         name: "Subscription",
         amount: "+2350",
         remark: "+150% from last month",
-        icon: subscript,
+        icon: <Users />,
     },
     {
         name: "Sales",
         amount: "15,000",
         remark: "+10% from last month",
-        icon: sales,
+        icon: <CreditCard />,
     },
     {
         name: "Active Now",
         amount: "574",
         remark: "+201 since last hour",
-        icon: active,
+        icon: <TrendingUp />,
     },
 ];
 
@@ -97,11 +98,7 @@ export default function Dashboard() {
                 </div>
                 <div className="flex w-full flex-row items-start justify-between gap-[8px] self-center sm:w-auto sm:items-center sm:justify-end">
                     <div className="flex flex-row justify-start gap-[2px] self-center sm:items-center">
-                        <img
-                            src={date}
-                            className="h-[24px] w-[24px] self-center object-cover"
-                            alt="date_img"
-                        />
+                        <CalendarDays />
                         <p className="self-center font-sans text-xs font-normal sm:text-sm">
                             Jan 18, 2024 - Feb 18, 2024
                         </p>
@@ -124,11 +121,7 @@ export default function Dashboard() {
                                     <p className="text-start font-sans text-sm font-semibold">
                                         {item.name}
                                     </p>
-                                    <img
-                                        src={item.icon}
-                                        className="w-[11%] justify-end object-cover sm:w-[8%]"
-                                        alt="img"
-                                    />
+                                    <div>{item.icon}</div>
                                 </div>
                                 <p className="text-start font-sans text-2xl font-semibold">
                                     {item.amount}
@@ -149,7 +142,7 @@ export default function Dashboard() {
                     <p className="py-7 pl-7 text-start text-base font-semibold">
                         Overview
                     </p>
-                    <BarComponent />
+                    <BarComponent/>
                 </section>
                 <section
                     className="flex w-full flex-col gap-[24px] self-start p-[24px] pb-[28px]"
